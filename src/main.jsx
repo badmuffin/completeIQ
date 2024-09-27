@@ -7,7 +7,8 @@ import "./index.css";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import NotFound from "./components/NotFound.jsx";
 import Contact from "./pages/Contact.jsx";
-import AuthForm from "./pages/AuthForm.jsx";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +18,8 @@ const router = createBrowserRouter(
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
-      <Route path="/login" element={<AuthForm />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/*" element={<NotFound />} />
     </>
   )

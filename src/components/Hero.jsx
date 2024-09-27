@@ -9,27 +9,27 @@ const Hero = () => {
         <div className="mb-16 lg:mb-0 lg:max-w-lg">
           <div className="mb-6 max-w-xl">
             <div>
-              <p className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px text-xs font-semibold uppercase tracking-wider text-purple-900">
+              <p className="bg-teal-accent-400 mb-1 inline-block rounded-full px-3 py-px text-lg font-semibold uppercase tracking-wider text-purple-900">
                 INTRODUCING
               </p>
             </div>
-            <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-gray-700 sm:text-5xl sm:leading-snug">
+            <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-gray-600 sm:text-5xl sm:leading-snug">
               Start your startup <br />
               with <span className="inline-block text-purple-800">CompleteIQ</span>
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
+            <p className="text-base text-gray-600 md:text-lg">
             Complete IQ is an advanced predictive analysis platform designed to help startups identify future market trends and make informed decisions. 
             </p>
           </div>
           <div className="flex items-center">
             <Link
-              to="/"
+              to="/login"
               className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-bold rounded-lg text-sm px-10 py-4 text-center mr-2 mb-2"
             >
               Get Started
             </Link>
             <Link
-              to="/"
+              to="/about"
               className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-bold rounded-lg text-sm px-10 py-4 text-center mr-2 mb-2"
             >
               Learn More
