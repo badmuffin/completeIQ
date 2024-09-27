@@ -1,13 +1,37 @@
 // LoginForm.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = ({ toggleForm }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5000/api/auth/login", {
+        email, 
+        password,
+      });
+      console.log(response.data);
+      // Store token in localStorage
+      localStorage.setItem("token", response.data.token);
+      
+      if(response.status === 200) {
+        localStorage.setItem("token", response.data.token);
+        navigate("/dashboard");
+      } 
+    } catch (error) {
+      console.error("Login error:", error.response.data.message);
+    }
+  }
 
   return (
     <section className="flex justify-center items-center w-screen h-screen bg-purple-700">
@@ -22,11 +46,13 @@ const Login = ({ toggleForm }) => {
           </p>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
               type="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded focus:border-purple-500 focus:outline-none"
             />
           </div>
@@ -35,6 +61,8 @@ const Login = ({ toggleForm }) => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded focus:border-purple-500 focus:outline-none"
             />
             <i
@@ -46,7 +74,7 @@ const Login = ({ toggleForm }) => {
           </div>
 
           <div className="text-center mb-4">
-            <button className="w-full py-2 text-white bg-purple-600 hover:bg-purple-700 rounded transition duration-300">
+            <button type="submit" className="w-full py-2 text-white bg-purple-600 hover:bg-purple-700 rounded transition duration-300">
               Login
             </button>
           </div>

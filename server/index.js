@@ -17,21 +17,9 @@ mongoose.connect('mongodb://localhost:27017/completeIq', {
     console.error(error);
 });
 
-
 // Routes
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
-
-
-
-
-// app.get('/', (req, res) => {
-//     res.send('Hello World!');
-// });
-
-
-// app.get('/login', (req, res) => {});     
-
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
