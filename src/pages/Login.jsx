@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../utils/AuthContext";
 
 const Login = ({ toggleForm }) => {
+  const {login} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,6 +30,11 @@ const Login = ({ toggleForm }) => {
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
       } 
+
+      if (email && password) { // Basic validation
+        login(); // Call the login function from AuthContext
+        navigate("/dashboard"); // Redirect to the Dashboard
+    }
     } catch (error) {
       console.error("Login error:", error.response.data.message);
     }

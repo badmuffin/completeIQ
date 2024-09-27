@@ -2,12 +2,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../utils/AuthContext";
 
 const Signup = ({ toggleForm }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {login} = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,7 +20,12 @@ const Signup = ({ toggleForm }) => {
         password,
       });
       console.log("Signup Successful");
-      navigate("/dashboard");
+      
+      if(email && password) {
+        login();
+        navigate("/dashboard");
+      }
+
     } catch (error) {
       console.error("Signup error: ", error);
       alert(error)
