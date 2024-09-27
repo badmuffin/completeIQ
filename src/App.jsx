@@ -1,17 +1,15 @@
-import './App.css'
-import Hero from './component/Hero'
-import Navbar from './component/Navbar'
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
-  
   return (
     <>
-      <section>
-        <Navbar />
-        <Hero />
-      </section>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
