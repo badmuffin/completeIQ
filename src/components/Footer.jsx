@@ -19,8 +19,7 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">About Us</h4>
             <p className="text-gray-400">
-              We provide top-notch online courses to help you learn and grow in
-              your career.
+            Complete IQ is an advanced predictive analysis platform designed to help startups
             </p>
           </div>
 
@@ -68,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          © 2024 Coderzonee. All rights reserved.
+          © 2024 CompleteIQ. All rights reserved.
         </div>
       </div>
     </footer>

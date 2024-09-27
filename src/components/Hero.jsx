@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import video from "../Assets/vid.mp4";
 
 const Hero = () => {
   return (
-    <div className="relative mx-auto px-4 pt-16 sm:max-w-xl md:max-w-full md:px-8 lg:py-32 xl:px-20">
+    <div className="relative flex mx-auto px-4 pt-16 sm:max-w-xl md:max-w-full md:px-8 lg:py-32 xl:px-20">
       <div className="mx-auto max-w-xl lg:max-w-screen-xl">
         <div className="mb-16 lg:mb-0 lg:max-w-lg">
           <div className="mb-6 max-w-xl">
@@ -12,7 +13,7 @@ const Hero = () => {
                 INTRODUCING
               </p>
             </div>
-            <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-slate-700 sm:text-5xl sm:leading-snug">
+            <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-gray-700 sm:text-5xl sm:leading-snug">
               Start your startup <br />
               with <span className="inline-block text-purple-800">CompleteIQ</span>
             </h2>
@@ -36,9 +37,16 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="flex h-full bg-black justify-center overflow-hidden lg:absolute lg:bottom-0 lg:right-0 lg:w-2/3 lg:items-end lg:justify-start xl:w-1/2">
+      {/* <div className="flex h-full bg-black justify-center overflow-hidden lg:absolute lg:bottom-0 lg:right-0 lg:w-2/3 lg:items-end lg:justify-start xl:w-1/2">
         
-      </div>
+      </div> */}
+      <video
+        autoPlay
+        loop
+        src={video}
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10 max-sm:hidden opacity-100"
+      />
     </div>
   );
 };

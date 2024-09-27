@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default () => {
   return (
@@ -30,10 +31,10 @@ export default () => {
             <p className="mt-3 max-w-lg text-[15px] text-purple-100 sm:mx-auto">
               No spam ever, we are care about the protection of your data. Read
               our{" "}
-              <a className="underline" href="javascript:void(0)">
+              <Link className="underline" href="javascript:void(0)">
                 {" "}
                 Privacy Policy{" "}
-              </a>
+              </Link>
             </p>
           </div>
         </div>
