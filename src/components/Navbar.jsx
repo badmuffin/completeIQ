@@ -1,8 +1,16 @@
 import React from "react";
 import logo from "../Assets/logo.jpeg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const navlinks = [
+    { title: "Home", link: "/" },
+    { title: "About", link: "/about" },
+    { title: "Dashboard", link: "/dashboard" },
+    { title: "Analysis", link: "analysis" },
+    { title: "Contact", link: "contact" },
+  ];
+
   return (
     <nav className="">
       <header className="relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center text-slate-700">
@@ -40,21 +48,11 @@ const Navbar = () => {
           className="flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all peer-checked:mt-8 peer-checked:max-h-56 md:ml-24 md:max-h-full md:flex-row md:items-start"
         >
           <ul className="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
-            <li className="md:mr-12">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="md:mr-12">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="md:mr-12">
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            <li className="md:mr-12">
-              <Link to="/analysis">Analysis</Link>
-            </li>
-            <li className="md:mr-12">
-              <Link to="/contact">Contact</Link>
-            </li>
+            {navlinks.map((navlink) => (
+              <li className="md:mr-12">
+                <NavLink to={navlink.link} className={({isActive}) => `${isActive ? "underline": ""} `} >{navlink.title}</NavLink>
+              </li>
+            ))}
             <Link
               to="/"
               className="text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 hover:bg-gradient-to-br shadow-sm shadow-gray-500/50 dark:shadow-lg dark:shadow-gray-500/50 font-bold rounded-xl text-sm px-10 py-2 text-center mr-2 mb-2"
