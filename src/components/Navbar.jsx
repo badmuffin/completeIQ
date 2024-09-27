@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="">
+    <nav className="sticky top-0 z-50 bg-white">
       <header className="relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center text-slate-700">
         <div
           className="flex cursor-pointer items-center whitespace-nowrap text-2xl font-black"
@@ -47,8 +47,8 @@ const Navbar = () => {
           className="flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all peer-checked:mt-8 peer-checked:max-h-56 md:ml-24 md:max-h-full lg:flex-row md:items-start"
         >
           <ul className="flex flex-col items-center space-y-1 md:ml-auto md:flex-row md:space-y-0">
-            {navlinks.map((navlink) => (
-              <li className="md:mr-10">
+            {navlinks.map((navlink, index) => (
+              <li key={index} className="md:mr-10">
                 <NavLink to={navlink.link} className={({isActive}) => `${isActive ? "underline": ""} `} >{navlink.title}</NavLink>
               </li>
             ))}
