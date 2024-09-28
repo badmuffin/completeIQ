@@ -26,7 +26,9 @@ const router = createBrowserRouter(
         <Route path="" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route
+        <Route path="/community" element={<Community />} />
+      </Route>
+      <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
@@ -34,8 +36,6 @@ const router = createBrowserRouter(
             </ProtectedRoute>
           }
         />
-        <Route path="/community" element={<Community />} />
-      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/*" element={<NotFound />} />
