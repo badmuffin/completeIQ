@@ -1,7 +1,7 @@
 # **CompeteIQ**
 ### A Tool for Startup Competition Search and Trend Prediction
-
 ---
+Complete IQ is an advanced predictive analysis platform designed to help startups identify future market trends and make informed decisions.
 
 ## **Introduction**
 **CompeteIQ** is a platform built to assist **startup founders** in understanding the competition in their industry and predicting future market trends. It provides entrepreneurs with critical insights on similar startups and trend analysis, helping them make informed strategic decisions.
