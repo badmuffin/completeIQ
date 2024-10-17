@@ -1,4 +1,4 @@
-# **CompeteIQ**
+# **CompeteIQ** - Under Development
 ### A Tool for Startup Competition Search and Trend Prediction
 ---
 Complete IQ is an advanced predictive analysis platform designed to help startups identify future market trends and make informed decisions.
@@ -43,23 +43,9 @@ Startups often face difficulty in gathering the right information about their co
 
 ## **Tech Stack**
 
-- **Frontend**: HTML, CSS, JavaScript (React.js for UI/UX)
+- **Frontend**: Reactjs
 - **Backend**: Node.js, Express.js (API and business logic)
 - **Database**: MongoDB (for storing startup data and trends)
-- **AI/ML Integration**: Python, Scikit-learn, Prophet (for similarity search and trend prediction)
+- **AI/ML Integration**: Python
 - **Data Visualization**: Chart.js (for displaying trend predictions in an easy-to-understand format)
 
----
-
-## **How to Install and Run**
-
-### **Requirements**
-- **Node.js** (version 14 or later)
-- **MongoDB** (for database)
-- **Python** (for AI/ML scripts)
-
-### **Installation Steps**
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/CompeteIQ.git
-   cd CompeteIQ
